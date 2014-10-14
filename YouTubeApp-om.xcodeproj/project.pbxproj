@@ -13,6 +13,9 @@
 		452CD2CC19ECBCCE00C24A63 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 452CD2CB19ECBCCE00C24A63 /* Images.xcassets */; };
 		452CD2CF19ECBCCE00C24A63 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 452CD2CD19ECBCCE00C24A63 /* LaunchScreen.xib */; };
 		452CD2DB19ECBCCE00C24A63 /* YouTubeApp_omTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CD2DA19ECBCCE00C24A63 /* YouTubeApp_omTests.swift */; };
+		452CD2E519ECC08000C24A63 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CD2E419ECC08000C24A63 /* MenuViewController.swift */; };
+		452CD2E719ECC08800C24A63 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CD2E619ECC08800C24A63 /* FeedViewController.swift */; };
+		452CD2E919ECC0B900C24A63 /* HamburgerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 452CD2E819ECC0B900C24A63 /* HamburgerViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +39,9 @@
 		452CD2D419ECBCCE00C24A63 /* YouTubeApp-omTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "YouTubeApp-omTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		452CD2D919ECBCCE00C24A63 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		452CD2DA19ECBCCE00C24A63 /* YouTubeApp_omTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = YouTubeApp_omTests.swift; sourceTree = "<group>"; };
+		452CD2E419ECC08000C24A63 /* MenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		452CD2E619ECC08800C24A63 /* FeedViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		452CD2E819ECC0B900C24A63 /* HamburgerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HamburgerViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +85,9 @@
 			children = (
 				452CD2C419ECBCCE00C24A63 /* AppDelegate.swift */,
 				452CD2C619ECBCCE00C24A63 /* ViewController.swift */,
+				452CD2E419ECC08000C24A63 /* MenuViewController.swift */,
+				452CD2E619ECC08800C24A63 /* FeedViewController.swift */,
+				452CD2E819ECC0B900C24A63 /* HamburgerViewController.swift */,
 				452CD2C819ECBCCE00C24A63 /* Main.storyboard */,
 				452CD2CB19ECBCCE00C24A63 /* Images.xcassets */,
 				452CD2CD19ECBCCE00C24A63 /* LaunchScreen.xib */,
@@ -213,6 +222,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				452CD2C719ECBCCE00C24A63 /* ViewController.swift in Sources */,
+				452CD2E519ECC08000C24A63 /* MenuViewController.swift in Sources */,
+				452CD2E719ECC08800C24A63 /* FeedViewController.swift in Sources */,
+				452CD2E919ECC0B900C24A63 /* HamburgerViewController.swift in Sources */,
 				452CD2C519ECBCCE00C24A63 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
