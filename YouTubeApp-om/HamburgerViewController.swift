@@ -42,6 +42,15 @@ class HamburgerViewController: UIViewController {
         var translation = gestureRecognizer.translationInView(view)
         var velocity = gestureRecognizer.velocityInView(view)
         var location = gestureRecognizer.locationInView(view)
+        var offset = Float(feedContainerView.center.x)
+        var angleConversion = convertValue(CGFloat(offset), r1Min: 160, r1Max: 320, r2Min: 0, r2Max: CGFloat(45 * M_PI / 180))
+        
+        var transform = CATransform3DIdentity;
+        transform.m34 = 1.0 / 500;
+        
+        /*var animation = CABasicAnimation(keyPath: "transform")
+        animation.toValue = NSValue(CATransform3D:transform)
+        animation.duration = 3*/
         
         var scaleIn = convertValue(feedContainerView.frame.origin.x, r1Min: 0.0, r1Max: 280.0, r2Min: 0.9, r2Max: 1.0)
         menuContainerView.transform = CGAffineTransformMakeScale(scaleIn, scaleIn)
@@ -52,8 +61,12 @@ class HamburgerViewController: UIViewController {
             
         } else if gestureRecognizer.state == UIGestureRecognizerState.Changed {
             println("Changed")
+            transform = CATransform3DRotate(transform, angleConversion, 0, 1, 0)
+            transform = CATransform3DTranslate(transform, 0, 0, 50)
+            feedContainerView.layer.transform = transform
             feedContainerView.center.x = translation.x + imageCenter.x
-            println("\(feedContainerView.center.x)")
+    
+            //feedContainerView.layer.addAnimation(animation, forKey: "transform")
             
         } else if gestureRecognizer.state == UIGestureRecognizerState.Ended {
             println("Ended")
