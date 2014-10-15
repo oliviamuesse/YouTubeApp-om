@@ -48,9 +48,9 @@ class HamburgerViewController: UIViewController {
         var transform = CATransform3DIdentity;
         transform.m34 = 1.0 / 500;
         
-        /*var animation = CABasicAnimation(keyPath: "transform")
-        animation.toValue = NSValue(CATransform3D:transform)
-        animation.duration = 3*/
+        var backTransform = CATransform3DIdentity;
+        backTransform.m34 = -1.0 / 500;
+        
         
         var scaleIn = convertValue(feedContainerView.frame.origin.x, r1Min: 0.0, r1Max: 280.0, r2Min: 0.9, r2Max: 1.0)
         menuContainerView.transform = CGAffineTransformMakeScale(scaleIn, scaleIn)
@@ -62,11 +62,9 @@ class HamburgerViewController: UIViewController {
         } else if gestureRecognizer.state == UIGestureRecognizerState.Changed {
             println("Changed")
             transform = CATransform3DRotate(transform, angleConversion, 0, 1, 0)
-            transform = CATransform3DTranslate(transform, 0, 0, 50)
+            transform = CATransform3DTranslate(transform, 0, 0, 40)
             feedContainerView.layer.transform = transform
             feedContainerView.center.x = translation.x + imageCenter.x
-    
-            //feedContainerView.layer.addAnimation(animation, forKey: "transform")
             
         } else if gestureRecognizer.state == UIGestureRecognizerState.Ended {
             println("Ended")
@@ -80,11 +78,14 @@ class HamburgerViewController: UIViewController {
                 UIView.animateWithDuration(0.5, delay: 0, usingSpringWithDamping: 0.7, initialSpringVelocity: 0.5, options: nil, animations: { () -> Void in
                     self.feedContainerView.center.x = 160
                     self.menuContainerView.transform = CGAffineTransformMakeScale(0.9, 0.9)
-                    }, completion: nil)
+                    self.feedContainerView.transform = CGAffineTransformMakeScale(1,1)
+                    }, completion: { (finished: Bool) -> Void in
+                })
+            backTransform = CATransform3DRotate(transform, angleConversion, 0, 1, 0)
+            backTransform = CATransform3DTranslate(transform, 0, 0, 30)
+            self.feedContainerView.layer.transform = backTransform
             }
-            
         }
-        
     }
 
     func convertValue(value: CGFloat, r1Min: CGFloat, r1Max: CGFloat, r2Min: CGFloat, r2Max: CGFloat) -> CGFloat {
